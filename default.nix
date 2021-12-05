@@ -83,4 +83,5 @@ hsPkgs // {
     #!${pkgs.bash}/bin/bash
     ${pkgs.caddy}/bin/caddy run --config ${caddyfile} --adapter caddyfile
   '';
+  inherit example;
 }
