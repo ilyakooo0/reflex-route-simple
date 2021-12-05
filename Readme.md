@@ -75,7 +75,7 @@ The `Proxy`s are useful because you can over over them in a sufficiently smart e
 We can now run our routes, supplying a lambda that looks through all possible routes and decides what page should be displayed. You can pattern-match on the exact same structures we used earlier to create the routes:
 
 ```haskell
-bodyW :: MonadWidget t m => Model -> m ()
+bodyW :: MonadWidget t m => m ()
 bodyW = runRouteT' \case
   Nothing -> articlesW
   Just IndexR -> articlesW
