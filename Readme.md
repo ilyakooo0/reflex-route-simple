@@ -43,18 +43,10 @@ All routes are matched agains in the order that the constructors appear in.
 To actually "run" the routes you need to call `runRouteT` (or one of his friends) where `r` is the routes sum-type we created earlier – `BlogRoutes`:
 
 ```haskell
-runRouteT
-  :: MonadWidget t m
-   =>                          (r RouteValue -> m a) -> m (Event t a)
-runRouteT'
-  :: MonadWidget t m
-  =>                           (r RouteValue -> m a) -> m ()
-runRouteTEv
-  :: MonadWidget t m
-  => Event t (r RouteValue) -> (r RouteValue -> m a) -> m (Event t a)
-runRouteTEv'
-  :: MonadWidget t m
-  => Event t (r RouteValue) -> (r RouteValue -> m a) -> m ()
+runRouteT    ::                           (r RouteValue -> m a) -> m (Event t a)
+runRouteT'   ::                           (r RouteValue -> m a) -> m ()
+runRouteTEv  :: Event t (r RouteValue) -> (r RouteValue -> m a) -> m (Event t a)
+runRouteTEv' :: Event t (r RouteValue) -> (r RouteValue -> m a) -> m ()
 ```
 
 
