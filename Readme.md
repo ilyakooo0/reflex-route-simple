@@ -6,7 +6,9 @@ A simple type-safe routing framework for reflex-dom applications without any `Te
 
 ### Defining routes
 
-> You can see the full working example in [`app/Main.hs`](./app/Main.hs)
+> 👀 You can see a full example in [`app/Main.hs`](./app/Main.hs).
+>
+> 🌐 You can see the example in action at [iko.soy/reflex-route-simple](https://iko.soy/reflex-route-simple/).
 
 You only need to import a single module:
 
@@ -115,7 +117,7 @@ Let's try it out! We will look at `articleW` defined earlier:
 
 ```haskell
 articlesW :: (MonadWidget t m, MonadRoute BlogRoutes t m) => m ()
-articlesW =
+articlesW = do
   articles <- getAllArticles
   forM_ articles $ \(articleId, articleTitile) ->
     Link clicked <- link articleTitile
