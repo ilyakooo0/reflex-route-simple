@@ -1,0 +1,8 @@
+packages:
+  ./
+
+source-repository-package
+  type: git
+  location: https://github.com/drhodes/hs-lorem.git
+  tag: fb8d3861a4cf826c169bc350f93c69d6e5e42999
+  --sha256: 1pxna9ak2i1fgydrs0gp8yhhninbxri1bfw7wfc3k3s0jmnjr375

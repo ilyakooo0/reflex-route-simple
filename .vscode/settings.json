@@ -1,0 +1,4 @@
+{
+  "haskell.formattingProvider": "ormolu",
+  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"
+}
