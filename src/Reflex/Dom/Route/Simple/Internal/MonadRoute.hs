@@ -69,6 +69,10 @@ instance (Monad m, MonadRoute r t m) => MonadRoute r t (ReaderT r' m)
 
 instance (Monad m, MonadRoute r t m) => MonadRoute r t (EventWriterT t w m)
 
+instance (Monad m, MonadReader r m) => MonadReader r (RouteT t u m) where
+  ask = lift ask
+  local f (RouteT m) = RouteT $ local f m
+
 instance Requester t m => Requester t (RouteT t r m) where
   type Request (RouteT t r m) = Request m
   type Response (RouteT t r m) = Response m
