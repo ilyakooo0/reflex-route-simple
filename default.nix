@@ -56,6 +56,7 @@ let
               ./cabal.project
             ];
           };
+          flags.example = true;
         };
       }
     ];

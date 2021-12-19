@@ -67,6 +67,8 @@ instance HasJSContext m => HasJSContext (RouteT t r m) where
 
 instance (Monad m, MonadRoute r t m) => MonadRoute r t (ReaderT r' m)
 
+instance (Monad m, MonadRoute r t m) => MonadRoute r t (EventWriterT t w m)
+
 instance Requester t m => Requester t (RouteT t r m) where
   type Request (RouteT t r m) = Request m
   type Response (RouteT t r m) = Response m

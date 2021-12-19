@@ -4,6 +4,10 @@ version:            0.1.0.0
 author:             Ilya Kostyuchenko
 maintainer:         ilyakooo0@gmail.com
 
+flag example
+  default: False
+  manual: True
+
 library
   exposed-modules:
     Reflex.Dom.Route.Simple,
@@ -90,8 +94,10 @@ executable reflex-route-simple-example
     reflex-dom,
     reflex-route-simple,
     text,
-    containers,
-    lorem
+    containers
+  if flag(example)
+    build-depends:
+      lorem
   hs-source-dirs:   app
   default-language: Haskell2010
   ghc-options:
